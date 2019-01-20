@@ -5,7 +5,7 @@ const extension = process.argv[3]
 
 fs.readdir(path, function doneReading(err, dirContents) {
     var correctFileNames = []
-    if (err) { return console.log(err); }
+    if (err) { return console.error(err); }
     for (var i = 0; i < dirContents.length; i++) {
         if (dirContents[i].split('.')[1] == extension) {
             correctFileNames.push(dirContents[i])
